@@ -29,6 +29,8 @@ namespace ServiceBus
                 SqlFilter filter2 = new SqlFilter("(index % 2) > 0");
                 nsm.CreateSubscription(topic.Path, "YoliSubscription2", filter2);
             }
+            //
+            //sadfsdf
 
             foreach(var s in nsm.GetSubscriptions(topicName))
             {
@@ -42,7 +44,7 @@ namespace ServiceBus
             Console.WriteLine("Sending message to topic");
 
             TopicClient topicClient = TopicClient.CreateFromConnectionString(connectionStr, topicName);
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < 5000; i++)
             {
                 BrokeredMessage message = new BrokeredMessage();
                 message.Properties["index"] = i;
